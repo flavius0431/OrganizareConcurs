@@ -1,0 +1,18 @@
+plugins {
+    id 'java'
+}
+group 'TemaUICS'
+version '1.0'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+
+    implementation project(':ConcursModel')
+    testImplementation group: 'junit', name: 'junit', version: '4.12'
+}
+
+
+task prepareKotlinBuildScriptModel

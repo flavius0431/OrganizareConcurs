@@ -1,0 +1,38 @@
+plugins {
+  id 'java'
+  id 'application'
+  id 'org.openjfx.javafxplugin' version '0.0.13'
+}
+
+group 'TemaUICS'
+version '1.0-SNAPSHOT'
+
+repositories {
+  mavenCentral()
+}
+
+application {
+  //???
+
+  mainClass = 'concurs.StartRpcClient'
+}
+
+javafx {
+  modules = ['javafx.controls', 'javafx.fxml']
+}
+
+dependencies {
+
+  implementation project(':ConcursModel')
+  implementation project(':ConcursServices')
+  implementation project(':ConcursNetworking')
+
+  testImplementation group: 'junit', name: 'junit', version: '4.12'
+  implementation group: 'org.apache.logging.log4j', name: 'log4j-api', version: '2.10.0'
+  implementation group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.10.0'
+}
+
+test {
+  useJUnitPlatform()  }
+
+task prepareKotlinBuildScriptModel

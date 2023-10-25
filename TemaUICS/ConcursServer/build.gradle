@@ -1,0 +1,27 @@
+plugins {
+    id 'java'
+    id 'application'
+
+}
+
+group 'TemaUICS'
+version '1.0'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation project(path: ':ConcursPersistence')
+    implementation project(path: ':ConcursModel')
+    implementation project(path: ':ConcursNetworking')
+    implementation project(path: ':ConcursServices')
+
+    testImplementation group: 'junit', name: 'junit', version: '4.12'
+}
+
+application {
+    mainClass = 'StartRpcServer'
+}
+
+task prepareKotlinBuildScriptModel
